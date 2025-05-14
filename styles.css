@@ -25,7 +25,6 @@
 }
 
 .logo-circle {
-    background-color: white;
     border-radius: 50%;
     width: 32px;
     height: 32px;
@@ -295,4 +294,39 @@ nav li a span {
 
 .selected-row {
     background-color: #e2e8f0;
+}
+
+li img {
+    width: 10%;
+    height: auto;
+}
+
+.dropdownContent {
+    position: absolute;
+    background-color: rgb(245, 245, 245);
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 1); 
+    z-index: 1;
+    padding: 30px;
+    width: 3in;
+    top: 50px;
+    right: 13px;
+    opacity: 0;
+    transform: translateY(-20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    
+}
+
+.dropdownContent.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.dropdown_Avatar {
+    background-color: white;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }

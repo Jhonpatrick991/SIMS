@@ -54,6 +54,9 @@ document.addEventListener('DOMContentLoaded', function() {
                 this.style.backgroundColor = '';
             }
         });
-    });
-    
+    }); 
 });
+
+document.querySelector(".user-info").addEventListener("click", function() {
+    document.querySelector(".dropdownContent").classList.toggle("show");
+})
