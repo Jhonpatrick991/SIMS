@@ -156,6 +156,11 @@ main {
     border-radius: 50%;
 }
 
+.stat-card:hover {
+    transform: scale(1.05);
+    transition: transform 0.3s;
+}
+
 .stat-value {
     font-size: 36px;
     font-weight: bold;
@@ -303,6 +308,7 @@ li img {
 }
 
 .dropdownContent {
+    visibility: hidden;
     position: absolute;
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 1); 
     z-index: 1;
@@ -317,8 +323,10 @@ li img {
 }
 
 .dropdownContent.show {
+    visibility: visible;
     opacity: 1;
     transform: translateY(0);
+    transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
 .dropdown_Avatar {
