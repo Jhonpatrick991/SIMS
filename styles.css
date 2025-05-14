@@ -1,10 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=League+Spartan:wght@400;600;700&display=swap');
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: 'League Spartan', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
-
 .container {
     display: flex;
     height: 100vh;
@@ -303,7 +304,6 @@ li img {
 
 .dropdownContent {
     position: absolute;
-    background-color: rgb(245, 245, 245);
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 1); 
     z-index: 1;
     padding: 30px;
@@ -313,7 +313,7 @@ li img {
     opacity: 0;
     transform: translateY(-20px);
     transition: opacity 0.3s ease, transform 0.3s ease;
-    
+    align-content: center;
 }
 
 .dropdownContent.show {
@@ -329,4 +329,19 @@ li img {
     display: flex;
     align-items: center;
     justify-content: center;
+}
+
+.dropdownContent button {
+    background-color: #195287;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.dropdown_Avatar i {
+    color: #245a8d;
+    font-size: 80px;
 }
