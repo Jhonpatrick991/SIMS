@@ -77,7 +77,6 @@ $result = $con->query($sql);
                                 </th>
                                 <th>Section Name</th>
                                 <th>Students Enrolled</th>
-                                <th></th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
@@ -86,7 +85,6 @@ $result = $con->query($sql);
                                 <?php while($row = $result->fetch_assoc()): ?>
                             <tr>
                                 <td><input type="checkbox"></td>
-                                <td><?= ($row['SectionId']) ?></td>
                                 <td><?= ($row['SectionName']) ?></td>
                                 <td><?= ($row['StudentsEnrolled']) ?></td>
                                 <td class="actions-column">
