@@ -48,44 +48,13 @@
             </header>
 
             <main class="calendar-main">
-                <div class="weekly-calendar">
-                    <div class="day">
-                        <div class="day-name">Mon</div>
-                        <div class="day-number">12</div>
-                    </div>
-                    <div class="day">
-                        <div class="day-name">Tue</div>
-                        <div class="day-number">13</div>
-                    </div>
-                    <div class="day today">
-                        <div class="day-name">Wed</div>
-                        <div class="day-number">14</div>
-                        <div class="event">Today</div>
-                    </div>
-                    <div class="day">
-                        <div class="day-name">Thu</div>
-                        <div class="day-number">15</div>
-                    </div>
-                    <div class="day">
-                        <div class="day-name">Fri</div>
-                        <div class="day-number">16</div>
-                    </div>
-                    <div class="day">
-                        <div class="day-name">Sat</div>
-                        <div class="day-number">17</div>
-                    </div>
-                    <div class="day">
-                        <div class="day-name">Sun</div>
-                        <div class="day-number">18</div>
-                    </div>
-                </div>
+                <div class="weekly-calendar" id="weeklyCalendar"></div>
 
                 <div class="monthly-calendars">
                     <div class="calendar-slider">
-                       
                         <div class="monthly-calendar">
                             <div class="month-header">
-                                <h3>April 2025</h3>
+                                <h3 id="month1Title"></h3>
                             </div>
                             <table class="month-table">
                                 <thead>
@@ -99,59 +68,13 @@
                                         <th>Su</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <tr>
-                                        <td class="other-month">31</td>
-                                        <td>1</td>
-                                        <td>2</td>
-                                        <td>3</td>
-                                        <td>4</td>
-                                        <td>5</td>
-                                        <td>6</td>
-                                    </tr>
-                                    <tr>
-                                        <td>7</td>
-                                        <td>8</td>
-                                        <td>9</td>
-                                        <td>10</td>
-                                        <td>11</td>
-                                        <td>12</td>
-                                        <td>13</td>
-                                    </tr>
-                                    <tr>
-                                        <td>14</td>
-                                        <td>15</td>
-                                        <td>16</td>
-                                        <td>17</td>
-                                        <td>18</td>
-                                        <td>19</td>
-                                        <td>20</td>
-                                    </tr>
-                                    <tr>
-                                        <td>21</td>
-                                        <td>22</td>
-                                        <td>23</td>
-                                        <td>24</td>
-                                        <td>25</td>
-                                        <td>26</td>
-                                        <td>27</td>
-                                    </tr>
-                                    <tr>
-                                        <td>28</td>
-                                        <td>29</td>
-                                        <td>30</td>
-                                        <td class="other-month">1</td>
-                                        <td class="other-month">2</td>
-                                        <td class="other-month">3</td>
-                                        <td class="other-month">4</td>
-                                    </tr>
-                                </tbody>
+                                <tbody id="month1Body"></tbody>
                             </table>
                         </div>
 
                         <div class="monthly-calendar">
                             <div class="month-header">
-                                <h3>May 2025</h3>
+                                <h3 id="month2Title"></h3>
                             </div>
                             <table class="month-table">
                                 <thead>
@@ -165,59 +88,13 @@
                                         <th>Su</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <tr>
-                                        <td class="other-month">28</td>
-                                        <td class="other-month">29</td>
-                                        <td class="other-month">30</td>
-                                        <td>1</td>
-                                        <td>2</td>
-                                        <td>3</td>
-                                        <td>4</td>
-                                    </tr>
-                                    <tr>
-                                        <td>5</td>
-                                        <td>6</td>
-                                        <td>7</td>
-                                        <td>8</td>
-                                        <td>9</td>
-                                        <td>10</td>
-                                        <td>11</td>
-                                    </tr>
-                                    <tr>
-                                        <td>12</td>
-                                        <td>13</td>
-                                        <td class="active">14</td>
-                                        <td>15</td>
-                                        <td>16</td>
-                                        <td>17</td>
-                                        <td>18</td>
-                                    </tr>
-                                    <tr>
-                                        <td>19</td>
-                                        <td>20</td>
-                                        <td>21</td>
-                                        <td>22</td>
-                                        <td>23</td>
-                                        <td>24</td>
-                                        <td>25</td>
-                                    </tr>
-                                    <tr>
-                                        <td>26</td>
-                                        <td>27</td>
-                                        <td>28</td>
-                                        <td>29</td>
-                                        <td>30</td>
-                                        <td>31</td>
-                                        <td class="other-month">1</td>
-                                    </tr>
-                                </tbody>
+                                <tbody id="month2Body"></tbody>
                             </table>
                         </div>
 
                         <div class="monthly-calendar">
                             <div class="month-header">
-                                <h3>June 2025</h3>
+                                <h3 id="month3Title"></h3>
                             </div>
                             <table class="month-table">
                                 <thead>
@@ -231,62 +108,7 @@
                                         <th>Su</th>
                                     </tr>
                                 </thead>
-                                <tbody>
-                                    <tr>
-                                        <td class="other-month">26</td>
-                                        <td class="other-month">27</td>
-                                        <td class="other-month">28</td>
-                                        <td class="other-month">29</td>
-                                        <td class="other-month">30</td>
-                                        <td class="other-month">31</td>
-                                        <td>1</td>
-                                    </tr>
-                                    <tr>
-                                        <td>2</td>
-                                        <td>3</td>
-                                        <td>4</td>
-                                        <td>5</td>
-                                        <td>6</td>
-                                        <td>7</td>
-                                        <td>8</td>
-                                    </tr>
-                                    <tr>
-                                        <td>9</td>
-                                        <td>10</td>
-                                        <td>11</td>
-                                        <td>12</td>
-                                        <td>13</td>
-                                        <td>14</td>
-                                        <td>15</td>
-                                    </tr>
-                                    <tr>
-                                        <td>16</td>
-                                        <td>17</td>
-                                        <td>18</td>
-                                        <td>19</td>
-                                        <td>20</td>
-                                        <td>21</td>
-                                        <td>22</td>
-                                    </tr>
-                                    <tr>
-                                        <td>23</td>
-                                        <td>24</td>
-                                        <td>25</td>
-                                        <td>26</td>
-                                        <td>27</td>
-                                        <td>28</td>
-                                        <td>29</td>
-                                    </tr>
-                                    <tr>
-                                        <td>30</td>
-                                        <td class="other-month">1</td>
-                                        <td class="other-month">2</td>
-                                        <td class="other-month">3</td>
-                                        <td class="other-month">4</td>
-                                        <td class="other-month">5</td>
-                                        <td class="other-month">6</td>
-                                    </tr>
-                                </tbody>
+                                <tbody id="month3Body"></tbody>
                             </table>
                         </div>
                     </div>
@@ -295,7 +117,7 @@
         </div>
     </div>
 
-    <script src="../JS/script.js"></script>
-    <script src="../JS/table.js"></script>
+    <script src="../JS/calender.js"></script>
+    <script> src="../JS/table.css"</script>
 </body>
 </html>
