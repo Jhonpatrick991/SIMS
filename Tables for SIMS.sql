@@ -2,7 +2,7 @@ CREATE TABLE IF NOT EXISTS Students (
     StudentNumber VARCHAR(20) PRIMARY KEY,
     StudentName VARCHAR(100) NOT NULL,
     Course VARCHAR(100) NOT NULL,
-    SubjectCode VARCHAR(20) PRIMARY KEY,
+    SubjectEnrolled VARCHAR(20) PRIMARY KEY,
     Email VARCHAR(100) NOT NULL UNIQUE
 );
 
