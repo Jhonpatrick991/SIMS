@@ -1,4 +1,4 @@
-INSERT INTO Students (StudentNumber, StudentName, Course, SubjectCode Email) VALUES
+INSERT INTO Students (StudentNumber, StudentName, Course, SubjectCode, Email) VALUES
 ('20210001', 'Alice Mendoza', 'BS Computer Science', 'CS101', 'alice.mendoza@example.com'),
 ('20210002', 'Brandon Lee', 'BS Information Technology', 'IS303', 'brandon.lee@example.com'),
 ('20210003', 'Carlos Reyes', 'BS Computer Science', 'CS101', 'carlos.reyes@example.com'),
