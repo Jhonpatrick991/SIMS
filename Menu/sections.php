@@ -1,3 +1,11 @@
+<?php
+require("../connect.php");
+
+$sql = "SELECT * FROM sections";
+$result = $con->query($sql);
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -20,12 +28,12 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="../index.html"><img src="../logos/table.png"> <span>Dashboard</span></a></li>
-                    <li><a href="../Menu/calendar.html"><img src="../logos/calendar.png"> <span>Calendar</span></a></li>
-                    <li><a href="../Menu/students.html"><img src="../logos/graduation.png"><span>Students</span></a></li>
-                    <li class="active"><a href="../Menu/sections.html"><img src="../logos/multiple-users-silhouette 1.png"><span>Sections</span></a></li>
-                    <li><a href="../Menu/subjects.html"><img src="../logos/stack 1.png"><span>Subjects</span></a></li>
-                    <li><a href="../Menu/grades.html"><img src="../logos/exam@2x.png"><span>Grades</span></a></li>
+                    <li><a href="../index.php"><img src="../logos/table.png"> <span>Dashboard</span></a></li>
+                    <li><a href="../Menu/calendar.php"><img src="../logos/calendar.png"> <span>Calendar</span></a></li>
+                    <li><a href="../Menu/students.php"><img src="../logos/graduation.png"><span>Students</span></a></li>
+                    <li class="active"><a href="../Menu/sections.php"><img src="../logos/multiple-users-silhouette 1.png"><span>Sections</span></a></li>
+                    <li><a href="../Menu/subjects.php"><img src="../logos/stack 1.png"><span>Subjects</span></a></li>
+                    <li><a href="../Menu/grades.php"><img src="../logos/exam@2x.png"><span>Grades</span></a></li>
                 </ul>
             </nav>
         </div>
@@ -74,16 +82,22 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <?php if ($result->num_rows > 0): ?>
+                                <?php while($row = $result->fetch_assoc()): ?>
                             <tr>
                                 <td><input type="checkbox"></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
+                                <td><?= ($row['SectionId']) ?></td>
+                                <td><?= ($row['SectionName']) ?></td>
+                                <td><?= ($row['StudentsEnrolled']) ?></td>
                                 <td class="actions-column">
                                     <button class="edit-button"><i class="fas fa-edit"></i></button>
                                     <button class="delete-button"><i class="fas fa-trash"></i></button>
                                 </td>
                             </tr>
+                            <?php endwhile; ?>
+                            <?php else: ?>
+                                <tr><td colspan="7">No Grades were found.</td></tr>
+                            <?php endif; ?>
                         </tbody>
                     </table>
                 </div>

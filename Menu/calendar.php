@@ -20,12 +20,12 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="../index.html"><img src="../logos/table.png"> <span>Dashboard</span></a></li>
-                    <li class="active"><a href="../Menu/calendar.html"><img src="../logos/calendar.png"> <span>Calendar</span></a></li>
-                    <li><a href="../Menu/students.html"><img src="../logos/graduation.png"><span>Students</span></a></li>
-                    <li><a href="../Menu/sections.html"><img src="../logos/multiple-users-silhouette 1.png"><span>Sections</span></a></li>
-                    <li><a href="../Menu/subjects.html"><img src="../logos/stack 1.png"><span>Subjects</span></a></li>
-                    <li><a href="../Menu/grades.html"><img src="../logos/exam@2x.png"><span>Grades</span></a></li>
+                    <li><a href="../index.php"><img src="../logos/table.png"> <span>Dashboard</span></a></li>
+                    <li class="active"><a href="../Menu/calendar.php"><img src="../logos/calendar.png"> <span>Calendar</span></a></li>
+                    <li><a href="../Menu/students.php"><img src="../logos/graduation.png"><span>Students</span></a></li>
+                    <li><a href="../Menu/sections.php"><img src="../logos/multiple-users-silhouette 1.png"><span>Sections</span></a></li>
+                    <li><a href="../Menu/subjects.php"><img src="../logos/stack 1.png"><span>Subjects</span></a></li>
+                    <li><a href="../Menu/grades.php"><img src="../logos/exam@2x.png"><span>Grades</span></a></li>
                 </ul>
             </nav>
         </div>
@@ -120,6 +120,6 @@
     </div>
 
     <script src="../JS/calender.js"></script>
-    <script src="../JS/table.css"></script>
+    <script src="../JS/table.js"></script>
 </body>
 </html>

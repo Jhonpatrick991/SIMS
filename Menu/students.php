@@ -1,9 +1,16 @@
+<?php
+require("../connect.php");
+
+$sql = "SELECT * FROM students";
+$result = $con->query($sql);
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Grades - Teacher Dashboard</title>
+    <title>Students - Teacher Dashboard</title>
     <link rel="stylesheet" href="../CSS/styles.css">
     <link rel="stylesheet" href="../CSS/table.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -11,7 +18,6 @@
 </head>
 <body>
     <div class="container">
-        <!-- Sidebar -->
         <div class="sidebar">
             <div class="logo">
                 <div class="logo-circle">
@@ -21,12 +27,12 @@
             </div>
             <nav>
                 <ul>
-                    <li><a href="../index.html"><img src="../logos/table.png"> <span>Dashboard</span></a></li>
-                    <li><a href="../Menu/calendar.html"><img src="../logos/calendar.png"> <span>Calendar</span></a></li>
-                    <li><a href="../Menu/students.html"><img src="../logos/graduation.png"><span>Students</span></a></li>
-                    <li><a href="../Menu/sections.html"><img src="../logos/multiple-users-silhouette 1.png"><span>Sections</span></a></li>
-                    <li><a href="../Menu/subjects.html"><img src="../logos/stack 1.png"><span>Subjects</span></a></li>
-                    <li class="active"><a href="../Menu/grades.html"><img src="../logos/exam@2x.png"><span>Grades</span></a></li>
+                    <li><a href="../index.php"><img src="../logos/table.png"> <span>Dashboard</span></a></li>
+                    <li><a href="../Menu/calendar.php"><img src="../logos/calendar.png"> <span>Calendar</span></a></li>
+                    <li class="active"><a href="../Menu/students.php"><img src="../logos/graduation.png"><span>Students</span></a></li>
+                    <li><a href="../Menu/sections.php"><img src="../logos/multiple-users-silhouette 1.png"><span>Sections</span></a></li>
+                    <li><a href="../Menu/subjects.php"><img src="../logos/stack 1.png"><span>Subjects</span></a></li>
+                    <li><a href="../Menu/grades.php"><img src="../logos/exam@2x.png"><span>Grades</span></a></li>
                 </ul>
             </nav>
         </div>
@@ -52,61 +58,49 @@
 
             <main class="table-main">
                 <div class="table-container">
-                    <div class="filters">
-                        <div class="filter-group">
-                            <select class="filter-select">
-                                <option>Section</option>
-                            </select>
-                        </div>
-                        <div class="filter-group">
-                            <select class="filter-select">
-                                <option>Quarter - Semester</option>
-                            </select>
-                        </div>
+                    <div class="table-header">
+                        <button class="add-button">
+                            <i class="fas fa-plus"></i> New Student
+                        </button>
                         <div class="search-container">
                             <label for="search">Search:</label>
                             <input type="text" id="search" class="search-input">
                         </div>
                     </div>
                     
-                    <div class="table-actions">
-                        <button class="action-button">New row</button>
-                        <button class="action-button">New column</button>
-                    </div>
-                    
-                    <table class="data-table grades-table">
+                    <table class="data-table">
                         <thead>
                             <tr>
                                 <th class="checkbox-column">
                                     <input type="checkbox" id="select-all">
                                 </th>
                                 <th>Student Number</th>
-                                <th>Subject Code</th>
-                                <th>Semester</th>
-                                <th>Prelim Exam</th>
-                                <th>Midterm Exam</th>
-                                <th>Semi Final Exam</th>
-                                <th>Final Exam</th>
-                                <th>Total</th>
+                                <th>Name</th>
+                                <th>Course</th>
+                                <th>Subjects Enrolled</th>
+                                <th>Email</th>
                                 <th>Actions</th>
                             </tr>
                         </thead>
                         <tbody>
+                            <?php if ($result->num_rows > 0): ?>
+                                <?php while($row = $result->fetch_assoc()): ?>
                             <tr>
                                 <td><input type="checkbox"></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td></td>
-                                <td class="actions-column">
-                                    <button class="edit-button"><i class="fas fa-edit"></i></button>
-                                    <button class="delete-button"><i class="fas fa-trash"></i></button>
+                                    <td><?= ($row['StudentNumber']) ?></td>
+                                    <td><?= ($row['StudentName']) ?></td>
+                                    <td><?= ($row['Course']) ?></td>
+                                    <td><?= ($row['subjects_enrolled']) ?></td>
+                                    <td><?= ($row['Email']) ?></td>
+                                    <td class="actions-column">
+                                        <button class="edit-button"><i class="fas fa-edit"></i></button>
+                                        <button class="delete-button"><i class="fas fa-trash"></i></button>
                                 </td>
                             </tr>
+                            <?php endwhile; ?>
+                            <?php else: ?>
+                                <tr><td colspan="7">No students were found.</td></tr>
+                            <?php endif; ?>
                         </tbody>
                     </table>
                 </div>

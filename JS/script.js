@@ -55,7 +55,25 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     }); 
+
+  function updateLiveClock() {
+    const now = new Date();
+    const options = {
+      hour: 'numeric',
+      minute: 'numeric',
+      second: 'numeric',
+      hour12: true
+    };
+    const clockElement = document.getElementById('liveClock');
+    if (clockElement) {
+      clockElement.textContent = now.toLocaleTimeString('en-US', options);
+    }
+  }
+
+  updateLiveClock();    
+  setInterval(updateLiveClock, 1000);
 });
+
 
 document.querySelector(".user-info").addEventListener("click", function() {
     document.querySelector(".dropdownContent").classList.toggle("show");
