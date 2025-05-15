@@ -5,6 +5,7 @@ if (isset($_GET['id'])) {
     $studentNumber = $_GET['id'];
 
     $sql = "DELETE FROM students WHERE StudentNumber = ?";
+    $sql = "DELETE FROM grades WHERE StudentNumber = ?";
     $stmt = $con->prepare($sql);
     $stmt->bind_param("s", $studentNumber);
 
