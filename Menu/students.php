@@ -54,7 +54,7 @@ $result = $con->query($sql);
                         </div>
                         <h1>Teacher A</h1> 
                         <p>Joined on 2000 B.C.</p>
-                        <button onclick="window.location.href='SIMS/logout.php'">Logout</button>
+                        <button onclick="window.location.href='../logout.php'">Logout</button>
                     </div>
                 </div>
                 <div class="clock" id="liveClock"></div>
