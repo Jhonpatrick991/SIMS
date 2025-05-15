@@ -1,8 +1,7 @@
 <?php
 require("../connect.php");
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['GradeID'])) {
-    $gradeID = $_POST['GradeID'];
+if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['StudentNumber'])) {
     $studentNumber = $_POST['StudentNumber'];
     $subjectCode = $_POST['SubjectCode'];
     $semester = $_POST['Semester'];
