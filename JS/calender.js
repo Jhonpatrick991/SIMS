@@ -1,9 +1,18 @@
-        const now = new Date();
+let now = new Date();
+let today = {
+    day: now.getDate(),
+    month: now.getMonth(),
+    year: now.getFullYear()
+};
+
+function updateCalendars() {
+       const now = new Date();
         const today = {
             day: now.getDate(),
             month: now.getMonth(),
             year: now.getFullYear()
         };
+    }
 
         function renderWeeklyCalendar(today) {
             const weekContainer = document.getElementById('weeklyCalendar');
@@ -78,3 +87,22 @@
         generateCalendar(prevMonth, prevYear, 'month1Body', 'month1Title');
         generateCalendar(today.month, today.year, 'month2Body', 'month2Title');
         generateCalendar(nextMonth, nextYear, 'month3Body', 'month3Title');
+
+        updateCalendars();
+
+        setInterval(updateCalendars, 5000);
+
+        function updateLiveClock() {
+        const now = new Date();
+        const options = {
+            hour: 'numeric',
+            minute: 'numeric',
+            second: 'numeric',
+            hour12: true
+        };
+        const formattedTime = now.toLocaleTimeString('en-US', options);
+        document.getElementById('liveClock').textContent = formattedTime;
+    }
+
+    setInterval(updateLiveClock, 1000);
+    updateLiveClock();
