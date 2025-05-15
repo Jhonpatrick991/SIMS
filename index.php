@@ -19,7 +19,7 @@
             </div>
             <nav>
                 <ul>
-                    <li class="active"><a href="../index.php"><img src="logos/table.png"> <span>Dashboard</span></a></li>
+                    <li class="active"><a href="index.php"><img src="logos/table.png"> <span>Dashboard</span></a></li>
                     <li><a href="Menu/calendar.php"><img src="logos/calendar.png"> <span>Calendar</span></a></li>
                     <li><a href="Menu/students.php"><img src="logos/graduation.png"><span>Students</span></a></li>
                     <li><a href="Menu/sections.php"><img src="logos/multiple-users-silhouette 1.png"><span>Sections</span></a></li>
