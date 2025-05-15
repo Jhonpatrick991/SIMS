@@ -1,19 +1,20 @@
 <?php
 require("../connect.php");
 
-if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['StudentNumber'])) {
-    $StudentNumber = $_POST['StudentNumber'];
+if (isset($_GET['id'])) {
+    $studentNumber = $_GET['id'];
 
-    $stmt = $con->prepare("DELETE FROM grades WHERE StudentNumber = ?");
-    $stmt->bind_param("i", $gradeID);
+    $sql = "DELETE FROM grades   WHERE StudentNumber = ?";
+    $stmt = $con->prepare($sql);
+    $stmt->bind_param("s", $studentNumber);
 
     if ($stmt->execute()) {
         header("Location: ../Menu/grades.php?deleted=1");
         exit;
     } else {
-        echo "Error deleting grade.";
+        echo "Error deleting Grade.";
     }
 } else {
-    echo "Invalid request.";
+    echo "No student ID provided.";
 }
 ?>
