@@ -119,7 +119,7 @@
         </div>
     </div>
 
-    <script src="../JS/calender.js"></script>
+    <script src="../JS/calendar.js"></script>
     <script src="../JS/table.js"></script>
 </body>
 </html>
