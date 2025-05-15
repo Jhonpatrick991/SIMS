@@ -362,3 +362,14 @@ li img {
     margin-right: 20px;
     align-self: center;
 }
+
+.success-message {
+    text-align: center;
+    margin: 10px 0;
+}
+
+.success-message p {
+    font-size: 32px;
+    color: green;
+    display: inline-block;
+}

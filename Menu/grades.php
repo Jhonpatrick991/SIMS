@@ -115,11 +115,17 @@ $result = $con->query($sql);
                                 <td><?= ($row['Midterm']) ?></td>
                                 <td><?= ($row['SemiFinal']) ?></td>
                                 <td><?= ($row['Final']) ?></td>
-                                <td><?= ($row['Total']) ?></td>
+                                <td><?= ($row['GWA']) ?></td>
                                 <td class="actions-column">
-                                    <button class="edit-button"><i class="fas fa-edit"></i></button>
-                                    <button class="delete-button"><i class="fas fa-trash"></i></button>
-                                </td>
+                                        <a href="../PHP/editgrade.php?id=<?= $row['StudentNumber'] ?>" class="edit-button">
+                                            <i class="fas fa-edit"></i>
+                                        </a>
+                                        <a href="../PHP/deletegrade.php?id=<?= $row['StudentNumber'] ?>" 
+                                        class="delete-button" 
+                                        onclick="return confirm('Are you sure you want to delete this student?');">
+                                            <i class="fas fa-trash"></i>
+                                        </a>
+                                    </td>
                             </tr>
                             <?php endwhile; ?>
                             <?php else: ?>

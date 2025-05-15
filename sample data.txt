@@ -1,36 +1,36 @@
-INSERT INTO Students (StudentNumber, StudentName, Course, SubjectEnrolled, Email) VALUES
-('20210001', 'Alice Mendoza', 'BS Computer Science', 'CS101', 'alice.mendoza@example.com'),
-('20210002', 'Brandon Lee', 'BS Information Technology', 'IS303', 'brandon.lee@example.com'),
-('20210003', 'Carlos Reyes', 'BS Computer Science', 'CS101', 'carlos.reyes@example.com'),
-('20210004', 'Dana Lopez', 'BS Information Systems', 'IT202', 'dana.lopez@example.com'),
-('20210005', 'Ethan Cruz', 'BS Computer Science', 'CS101', 'ethan.cruz@example.com'),
-('20210006', 'Faith Santos', 'BS Information Technology', 'IS303', 'faith.santos@example.com'),
-('20210007', 'Gino Dela Rosa', 'BS Information Systems', 'IT202', 'gino.delarosa@example.com'),
-('20210008', 'Hannah Garcia', 'BS Computer Science', 'CS101', 'hannah.garcia@example.com'),
-('20210009', 'Ivan Navarro', 'BS Information Technology', 'IS303', 'ivan.navarro@example.com'),
-('20210010', 'Jessa Ramos', 'BS Information Systems', 'IT202', 'jessa.ramos@example.com');
+INSERT INTO Students (StudentNumber, StudentName, Course, Email) VALUES
+('20210001', 'Alice Mendoza', 'BS Computer Science', 'alice.mendoza@example.com'),
+('20210002', 'Brandon Lee', 'BS Information Technology', 'brandon.lee@example.com'),
+('20210003', 'Carlos Reyes', 'BS Computer Science', 'carlos.reyes@example.com'),
+('20210004', 'Dana Lopez', 'BS Information Systems', 'dana.lopez@example.com'),
+('20210005', 'Ethan Cruz', 'BS Computer Science', 'ethan.cruz@example.com'),
+('20210006', 'Faith Santos', 'BS Information Technology', 'faith.santos@example.com'),
+('20210007', 'Gino Dela Rosa', 'BS Information Systems', 'gino.delarosa@example.com'),
+('20210008', 'Hannah Garcia', 'BS Computer Science', 'hannah.garcia@example.com'),
+('20210009', 'Ivan Navarro', 'BS Information Technology', 'ivan.navarro@example.com'),
+('20210010', 'Jessa Ramos', 'BS Information Systems', 'jessa.ramos@example.com');
 
 
-INSERT INTO Sections (SectionId, SectionName, StudentsEnrolled) VALUES
-(0, 'CS101-A', 4),
-(1, 'IT201-B', 3),
-(2, 'IS301-C', 3);
+    INSERT INTO Sections (SectionName, StudentsEnrolled) VALUES
+    ('CS101-A', 4),
+    ('IT201-B', 3),
+    ('IS301-C', 3);
 
 
-INSERT INTO Subjects (SubjectCode, Unit, SubjectName, TotalSections, StudentsEnrolled, Time) VALUES
-('CS101', 3, 'Introduction to Programming', 1, 4, 'MWF 8:00-9:00'),
-('IT202', 3, 'Database Systems', 1, 3, 'TTh 10:00-11:30'),
-('IS303', 3, 'Information Management', 1, 3, 'MWF 1:00-2:00');
+    INSERT INTO Subjects (SubjectCode, Unit, SubjectName, TotalSections, StudentsEnrolled, Time) VALUES
+    ('CS101', 3, 'Introduction to Programming', 1, 4, 'MWF 8:00-9:00'),
+    ('IT202', 3, 'Database Systems', 1, 3, 'TTh 10:00-11:30'),
+    ('IS303', 3, 'Information Management', 1, 3, 'MWF 1:00-2:00');
 
 
-INSERT INTO Grades (StudentNumber, SubjectCode, Semester, Prelim, Midterm, SemiFinal, Final) VALUES
-('20210001', 'CS101', '1st', 1.5, 1.7, 1.3, 1.4),
-('20210003', 'CS101', '1st', 1.8, 2.0, 1.9, 1.7),
-('20210005', 'CS101', '1st', 1.2, 1.1, 1.3, 1.4),
-('20210008', 'CS101', '1st', 1.9, 2.1, 1.8, 2.0),
-('20210002', 'IT202', '1st', 2.0, 2.1, 2.2, 2.3),
-('20210006', 'IT202', '1st', 1.9, 2.0, 2.1, 2.2),
-('20210009', 'IT202', '1st', 1.5, 1.6, 1.8, 1.7),
-('20210004', 'IS303', '1st', 1.3, 1.5, 1.4, 1.2),
-('20210007', 'IS303', '1st', 2.0, 2.1, 2.3, 2.2),
-('20210010', 'IS303', '1st', 1.6, 1.5, 1.7, 1.6);
+    INSERT INTO Grades (StudentNumber, SubjectCode, Semester, Prelim, Midterm, SemiFinal, Final) VALUES
+    ('20210001', 'CS101', '1st', 1.5, 1.7, 1.3, 1.4),
+    ('20210003', 'CS101', '1st', 1.8, 2.0, 1.9, 1.7),
+    ('20210005', 'CS101', '1st', 1.2, 1.1, 1.3, 1.4),
+    ('20210008', 'CS101', '1st', 1.9, 2.1, 1.8, 2.0),
+    ('20210002', 'IT202', '1st', 2.0, 2.1, 2.2, 2.3),
+    ('20210006', 'IT202', '1st', 1.9, 2.0, 2.1, 2.2),
+    ('20210009', 'IT202', '1st', 1.5, 1.6, 1.8, 1.7),
+    ('20210004', 'IS303', '1st', 1.3, 1.5, 1.4, 1.2),
+    ('20210007', 'IS303', '1st', 2.0, 2.1, 2.3, 2.2),
+    ('20210010', 'IS303', '1st', 1.6, 1.5, 1.7, 1.6);

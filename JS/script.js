@@ -6,11 +6,11 @@ document.addEventListener('DOMContentLoaded', function() {
             console.log(`Clicked on ${statTitle}`);
             
             if (statTitle.includes('Students')) {
-                window.location.href = 'students.html';
+                window.location.href = 'Menu/students.php';
             } else if (statTitle.includes('Sections')) {
-                window.location.href = 'sections.html';
+                window.location.href = 'Menu/sections.php';
             } else if (statTitle.includes('Subjects')) {
-                window.location.href = 'subjects.html';
+                window.location.href = 'Menu/subjects.php';
             }
         });
         
@@ -22,11 +22,11 @@ document.addEventListener('DOMContentLoaded', function() {
                 const statTitle = card.querySelector('.stat-title').textContent;
                 
                 if (statTitle.includes('Students')) {
-                    window.location.href = 'students.html';
+                    window.location.href = 'Menu/students.php';
                 } else if (statTitle.includes('Sections')) {
-                    window.location.href = 'sections.html';
+                    window.location.href = 'Menu/sections.php';
                 } else if (statTitle.includes('Subjects')) {
-                    window.location.href = 'subjects.html';
+                    window.location.href = 'Menu/subjects.php';
                 }
             });
         }
