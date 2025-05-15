@@ -14,7 +14,7 @@ $result = $con->query($sql);
     <link rel="stylesheet" href="../CSS/styles.css">
     <link rel="stylesheet" href="../CSS/table.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" href="../logos/489702363_1172852834851590_9016514146118271067_n-removebg-preview 3.png" type="image/png">
+    <link rel="icon" href="logos/489702363_1172852834851590_9016514146118271067_n-removebg-preview 3.png" type="image/png">
 </head>
 <body>
     <div class="container">
@@ -90,7 +90,7 @@ $result = $con->query($sql);
                                     <td><?= ($row['StudentNumber']) ?></td>
                                     <td><?= ($row['StudentName']) ?></td>
                                     <td><?= ($row['Course']) ?></td>
-                                    <td><?= ($row['subjects_enrolled']) ?></td>
+                                    <td><?= ($row['SubjectCode']) ?></td>
                                     <td><?= ($row['Email']) ?></td>
                                     <td class="actions-column">
                                         <button class="edit-button"><i class="fas fa-edit"></i></button>

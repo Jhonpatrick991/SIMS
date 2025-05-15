@@ -111,7 +111,7 @@ $result = $con->query($sql);
                                 <td><?= ($row['Midterm']) ?></td>
                                 <td><?= ($row['SemiFinal']) ?></td>
                                 <td><?= ($row['Final']) ?></td>
-                                <td><?= ($row['Total']) ?></td>
+                                <td><?= ($row['GWA']) ?></td>
                                 <td class="actions-column">
                                     <button class="edit-button"><i class="fas fa-edit"></i></button>
                                     <button class="delete-button"><i class="fas fa-trash"></i></button>
