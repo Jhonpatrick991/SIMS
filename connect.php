@@ -1,3 +1,3 @@
 <?php
-$con = mysqli_connect("localhost", "sims", "sims", "sims");
+$con = mysqli_connect("localhost", "SIMS", "Sims@123", "sims");
 ?>
