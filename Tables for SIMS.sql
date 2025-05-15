@@ -7,8 +7,7 @@ CREATE TABLE IF NOT EXISTS Students (
 );
 
 CREATE TABLE IF NOT EXISTS Sections (
-    SectionId INT PRIMARY KEY,
-    SectionName VARCHAR(100) NOT NULL,
+    SectionName VARCHAR(100) PRIMARY KEY,
     StudentsEnrolled INT NOT NULL
 );
 

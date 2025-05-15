@@ -1,4 +1,8 @@
 <?php
+if (!isset($_SESSION['loggedin']) || $_SESSION['username'] !== 'admin') {
+    header("Location: login.php");
+    exit();
+}
 require("../connect.php");
 
 $sql = "SELECT * FROM subjects";
@@ -51,7 +55,7 @@ $result = $con->query($sql);
                         </div>
                         <h1>Teacher A</h1> 
                         <p>Joined on 2000 B.C.</p>
-                        <button>Logout</button>
+                        <button onclick="window.location.href='logout.php'">Logout</button>
                     </div>
                 </div>
                 <div class="clock" id="liveClock"></div>
@@ -60,7 +64,7 @@ $result = $con->query($sql);
             <main class="table-main">
                 <div class="table-container">
                     <div class="table-header">
-                        <button class="add-button">
+                        <button class="add-button" onclick="window.location.href='createSubject.php';">
                             <i class="fas fa-plus"></i> New Subject
                         </button>
                         <div class="search-container">

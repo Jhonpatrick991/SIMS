@@ -39,20 +39,6 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    const addButton = document.querySelector('.add-button');
-    if (addButton) {
-        addButton.addEventListener('click', function() {
-            const buttonText = this.textContent.trim();
-            if (buttonText.includes('Student')) {
-                alert('Add new student');
-            } else if (buttonText.includes('Section')) {
-                alert('Add new section');
-            } else if (buttonText.includes('Subject')) {
-                alert('Add new subject');
-            }
-        });
-    }
-    
     const searchInput = document.getElementById('search');
     if (searchInput) {
         searchInput.addEventListener('input', function() {

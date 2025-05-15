@@ -12,9 +12,9 @@ INSERT INTO Students (StudentNumber, StudentName, Course, SubjectEnrolled, Email
 
 
 INSERT INTO Sections (SectionId, SectionName, StudentsEnrolled) VALUES
-(1, 'CS101-A', 4),
-(2, 'IT201-B', 3),
-(3, 'IS301-C', 3);
+(0, 'CS101-A', 4),
+(1, 'IT201-B', 3),
+(2, 'IS301-C', 3);
 
 
 INSERT INTO Subjects (SubjectCode, Unit, SubjectName, TotalSections, StudentsEnrolled, Time) VALUES
