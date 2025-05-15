@@ -59,7 +59,7 @@ $result = $con->query($sql);
             <main class="table-main">
                 <div class="table-container">
                     <div class="table-header">
-                        <button class="add-button">
+                        <button class="add-button" onclick="window.location.href='createStudent.php';">
                             <i class="fas fa-plus"></i> New Student
                         </button>
                         <div class="search-container">
