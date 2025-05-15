@@ -14,7 +14,7 @@ $result = $con->query($sql);
     <link rel="stylesheet" href="../CSS/styles.css">
     <link rel="stylesheet" href="../CSS/table.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="icon" href="logos/489702363_1172852834851590_9016514146118271067_n-removebg-preview 3.png" type="image/png">
+    <link rel="icon" href="../logos/489702363_1172852834851590_9016514146118271067_n-removebg-preview 3.png" type="image/png">
 </head>
 <body>
     <div class="container">
@@ -58,6 +58,12 @@ $result = $con->query($sql);
 
             <main class="table-main">
                 <div class="table-container">
+                    <?php if (isset($_GET['deleted'])): ?>
+                        <div class="success-message">
+                            <p style="color: green;">Student deleted successfully.</p>
+                        </div>
+                    <?php endif; ?>
+
                     <div class="table-header">
                         <button class="add-button">
                             <i class="fas fa-plus"></i> New Student
@@ -77,7 +83,7 @@ $result = $con->query($sql);
                                 <th>Student Number</th>
                                 <th>Name</th>
                                 <th>Course</th>
-                                <th>Subjects Enrolled</th>
+                                <!-- <th>Subjects Enrolled</th> -->
                                 <th>Email</th>
                                 <th>Actions</th>
                             </tr>
@@ -90,12 +96,18 @@ $result = $con->query($sql);
                                     <td><?= ($row['StudentNumber']) ?></td>
                                     <td><?= ($row['StudentName']) ?></td>
                                     <td><?= ($row['Course']) ?></td>
-                                    <td><?= ($row['SubjectCode']) ?></td>
+                                    <!-- <td><?= ($row['SubjectCode']) ?></td> -->
                                     <td><?= ($row['Email']) ?></td>
                                     <td class="actions-column">
-                                        <button class="edit-button"><i class="fas fa-edit"></i></button>
-                                        <button class="delete-button"><i class="fas fa-trash"></i></button>
-                                </td>
+                                        <a href="../PHP/editstudent.php?id=<?= $row['StudentNumber'] ?>" class="edit-button">
+                                            <i class="fas fa-edit"></i>
+                                        </a>
+                                        <a href="../PHP/deletestudent.php?id=<?= $row['StudentNumber'] ?>" 
+                                        class="delete-button" 
+                                        onclick="return confirm('Are you sure you want to delete this student?');">
+                                            <i class="fas fa-trash"></i>
+                                        </a>
+                                    </td>
                             </tr>
                             <?php endwhile; ?>
                             <?php else: ?>

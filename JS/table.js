@@ -21,23 +21,23 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    const editButtons = document.querySelectorAll('.edit-button');
-    editButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const row = this.closest('tr');
-            alert('Edit row');
-        });
-    });
+    // const editButtons = document.querySelectorAll('.edit-button');
+    // editButtons.forEach(button => {
+    //     button.addEventListener('click', function() {
+    //         const row = this.closest('tr');
+    //         alert('Edit row');
+    //     });
+    // });
     
-    const deleteButtons = document.querySelectorAll('.delete-button');
-    deleteButtons.forEach(button => {
-        button.addEventListener('click', function() {
-            const row = this.closest('tr');
-            if (confirm('Are you sure you want to delete this item?')) {
-                row.remove();
-            }
-        });
-    });
+    // const deleteButtons = document.querySelectorAll('.delete-button');
+    // deleteButtons.forEach(button => {
+    //     button.addEventListener('click', function() {
+    //         const row = this.closest('tr');
+    //         if (confirm('Are you sure you want to delete this item?')) {
+    //             row.remove();
+    //         }
+    //     });
+    // });
     
     const addButton = document.querySelector('.add-button');
     if (addButton) {
