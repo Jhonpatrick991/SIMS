@@ -1,5 +1,5 @@
 <?php
-if (!isset($_SESSION['loggedin']) || $_SESSION['username'] !== 'admin') {
+if (!isset($_SESSION['loggedin'])) {
     header("Location: login.php");
     exit();
 }

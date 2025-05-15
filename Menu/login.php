@@ -1,6 +1,5 @@
 <?php
 session_start();
-$error = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'] ?? '';
@@ -8,11 +7,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     if ($username === "admin" && $password === "admin2444666666") {
         $_SESSION['loggedin'] = true;
-        $_SESSION['username'] = $username;
+		$_SESSION['username'] = $username;
         header("Location: index.php"); // or any dashboard page
-        exit();
+		exit();
     } else {
-        echo '<script language="javascript"> alert(Incorrect username or password!)</script>';
+        echo "<script>alert('Incorrect username or password!');</script>";
     }
 }
 ?>
