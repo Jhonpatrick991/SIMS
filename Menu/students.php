@@ -1,9 +1,9 @@
 <?php
+require("../connect.php");
 if (!isset($_SESSION['loggedin']) || $_SESSION['username'] !== 'admin') {
     header("Location: login.php");
     exit();
 }
-require("../connect.php");
 
 $sql = "SELECT * FROM students";
 $result = $con->query($sql);
@@ -54,7 +54,7 @@ $result = $con->query($sql);
                         </div>
                         <h1>Teacher A</h1> 
                         <p>Joined on 2000 B.C.</p>
-                        <button onclick="window.location.href='logout.php'">Logout</button>
+                        <button onclick="window.location.href='SIMS/logout.php'">Logout</button>
                     </div>
                 </div>
                 <div class="clock" id="liveClock"></div>
@@ -69,7 +69,7 @@ $result = $con->query($sql);
                     <?php endif; ?>
 
                     <div class="table-header">
-                        <button class="add-button" onclick="window.location.href='createStudent.php';">
+                        <button class="add-button" onclick="window.location.href='SIMS/PHP/createStudent.php';">
                             <i class="fas fa-plus"></i> New Student
                         </button>
                         <div class="search-container">

@@ -267,8 +267,8 @@ input {
 	<div class="form-container sign-in-container">
 		<form method="post">
 			<h1>Sign in</h1>
-			<input type="text" placeholder="Username" name="username" />
-			<input type="password" placeholder="Password" name="password" />
+			<input type="text" placeholder="Username" name="username"> 
+			<input type="password" placeholder="Password" name="password">
 			<a href="#">Forgot your password?</a>
 			<button type="submit">Sign In</button>
 		</form>
