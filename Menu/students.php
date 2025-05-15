@@ -90,7 +90,7 @@ $result = $con->query($sql);
                                     <td><?= ($row['StudentNumber']) ?></td>
                                     <td><?= ($row['StudentName']) ?></td>
                                     <td><?= ($row['Course']) ?></td>
-                                    <td><?= ($row['SubjectCode']) ?></td>
+                                    <td><?= ($row['subjects_enrolled']) ?></td>
                                     <td><?= ($row['Email']) ?></td>
                                     <td class="actions-column">
                                         <button class="edit-button"><i class="fas fa-edit"></i></button>
