@@ -1,6 +1,19 @@
 <?php
 session_start();
-include('connect.php');
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $username = $_POST['username'] ?? '';
+    $password = $_POST['password'] ?? '';
+
+    if ($username === "admin" && $password === "admin2444666666") {
+        $_SESSION['loggedin'] = true;
+		$_SESSION['username'] = $username;
+        header("Location: index.php"); // or any dashboard page
+		exit();
+    } else {
+        echo "<script>alert('Incorrect username or password!');</script>";
+    }
+}
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -252,12 +265,12 @@ input {
 		</form>
 	</div>
 	<div class="form-container sign-in-container">
-		<form action="index.php" method="post">
+		<form method="post">
 			<h1>Sign in</h1>
-			<input type="text" placeholder="Username" />
-			<input type="password" placeholder="Password" />
+			<input type="text" placeholder="Username" name="username"> 
+			<input type="password" placeholder="Password" name="password">
 			<a href="#">Forgot your password?</a>
-			<button>Sign In</button>
+			<button type="submit">Sign In</button>
 		</form>
 	</div>
 	<div class="overlay-container">
@@ -268,7 +281,7 @@ input {
 				<button class="ghost" id="signIn">Sign In</button>
 			</div>
 			<div class="overlay-panel overlay-right">
-				<h1>Hello, Friend!</h1>
+				<h1>Sign Up</h1>
 				<p>Enter your personal details and start journey with us</p>
 				<button class="ghost" id="signUp">Sign Up</button>
 			</div>
