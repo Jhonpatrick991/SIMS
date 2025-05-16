@@ -3,7 +3,7 @@ require("../connect.php");
 
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
-    $stmt = $con->prepare("SELECT * FROM section WHERE SectionName = ?");
+    $stmt = $con->prepare("SELECT * FROM sections WHERE SectionName = ?");
     $stmt->bind_param("i", $id);
     $stmt->execute();
     $result = $stmt->get_result();
@@ -32,8 +32,7 @@ if (isset($_GET['id'])) {
     <!-- <h2></h2> Test get or post here print_r($_GET or $_POST) -->
     <h2>Edit section</h2>
     <form action="updatesection.php" method="POST">
-        <!-- <input type="hidden" name="GradeID" value="<?= ($section['StudentNumber']) ?>"> -->
-
+        <input type="hidden" name="oldSectionName" value="<?= ($section['SectionName']) ?>">
         <label>Section Name:</label>
         <input type="text" name="sectionName" value="<?= ($section['SectionName']) ?>" required>
 

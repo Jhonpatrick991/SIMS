@@ -16,14 +16,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $SubjectCode = $_POST['SubjectCode'];
     $Unit = $_POST['Unit'];
     $SubjectName = $_POST['SubjectName'];
-    $TotalSections = $_POST['TotalSections'];
-    $StudentsEnrolled = $_POST['StudentsEnrolled'];
     $Time = $_POST['Time'];
 
     do {
         if (
-            empty($SubjectCode) || empty($Unit) || empty($SubjectName) ||
-            empty($TotalSections) || empty($StudentsEnrolled) || empty($Time)
+            empty($SubjectCode) || empty($Unit) || empty($SubjectName) || empty($Time)
         ) {
             $errorMessage = "All fields are required";
             break;
@@ -39,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $successMessage = "Subject created successfully";
 
-        header("Location: subjects.php");
+        header("Location: ../Menu/subjects.php");
         exit();
     } while (false);
 }
@@ -87,18 +84,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </div>
                 </div>
                 <div class="row mb-3">
-                    <label class="col-sm-3 col-form-label">Total Sections</label>
-                    <div class="col-sm-6">
-                        <input type="number" class="form-control" name="TotalSections" value="<?php echo $TotalSections; ?>">
-                    </div>
-                </div>
-                <div class="row mb-3">
-                    <label class="col-sm-3 col-form-label">Students Enrolled</label>
-                    <div class="col-sm-6">
-                        <input type="number" class="form-control" name="StudentsEnrolled" value="<?php echo $StudentsEnrolled; ?>">
-                    </div>
-                </div>
-                <div class="row mb-3">
                     <label class="col-sm-3 col-form-label">Time</label>
                     <div class="col-sm-6">
                         <input type="text" class="form-control" name="Time" value="<?php echo $Time; ?>">
@@ -124,7 +109,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <button type="submit" class="btn btn-primary">Create</button>
                     </div>
                     <div class="col-sm-3 d-grid">
-                        <button type="button" class="btn btn-secondary" onclick="window.location.href='subjects.php';">Cancel</button>
+                        <button type="button" class="btn btn-secondary" onclick="window.location.href='../Menu/subjects.php';">Cancel</button>
                     </div>
                 </div>
             </form>

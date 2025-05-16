@@ -2,7 +2,7 @@ CREATE TABLE IF NOT EXISTS Students (
     StudentNumber VARCHAR(20) PRIMARY KEY,
     StudentName VARCHAR(100) NOT NULL,
     SectionName VARCHAR(100),
-    SubjectCode VARCHAR(20) NOT NULL,
+    SubjectCode VARCHAR(20),
     Email VARCHAR(100) NOT NULL UNIQUE
 );
 
@@ -29,16 +29,21 @@ CREATE TABLE IF NOT EXISTS Grades (
     Prelim DECIMAL(5,2) DEFAULT NULL,
     Midterm DECIMAL(5,2) DEFAULT NULL,
     SemiFinal DECIMAL(5,2) DEFAULT NULL,
-    Final DECIMAL(5,2) DEFAULT NULL,
-    PRIMARY KEY (StudentNumber, SubjectCode),
-    FOREIGN KEY (StudentNumber) REFERENCES Students(StudentNumber),
-    FOREIGN KEY (SubjectCode) REFERENCES Subjects(SubjectCode)
+    Final DECIMAL(5,2) DEFAULT NULL
 );
 
-CREATE TABLE IF NOT EXISTS StudentSubjects (
-    StudentNumber VARCHAR(20),
-    SubjectCode VARCHAR(20),
-    PRIMARY KEY (StudentNumber, SubjectCode),
-    FOREIGN KEY (StudentNumber) REFERENCES Students(StudentNumber),
-    FOREIGN KEY (SubjectCode) REFERENCES Subjects(SubjectCode)
-);
+
+
+
+    -- PRIMARY KEY (StudentNumber, SubjectCode),
+    -- FOREIGN KEY (StudentNumber) REFERENCES Students(StudentNumber),
+    -- FOREIGN KEY (SubjectCode) REFERENCES Subjects(SubjectCode)
+
+
+-- CREATE TABLE IF NOT EXISTS StudentSubjects (
+--     StudentNumber VARCHAR(20),
+--     SubjectCode VARCHAR(20),
+--     PRIMARY KEY (StudentNumber, SubjectCode),
+--     FOREIGN KEY (StudentNumber) REFERENCES Students(StudentNumber),
+--     FOREIGN KEY (SubjectCode) REFERENCES Subjects(SubjectCode)
+-- );

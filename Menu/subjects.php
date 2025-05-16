@@ -5,9 +5,11 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['username'] !== 'admin') {
     exit();
 }
 
-$sql = "SELECT * FROM subjects";
+$sql = "SELECT s.SubjectId, s.SubjectCode, s.Unit, s.SubjectName, s.Time,
+            (SELECT COUNT(*) FROM sections WHERE SubjectCode = s.SubjectCode) AS SectionCount,
+            (SELECT COUNT(*) FROM students WHERE SubjectCode = s.SubjectCode) AS StudentCount
+        FROM subjects s";
 $result = $con->query($sql);
-
 ?>
 
 <!DOCTYPE html>
@@ -64,7 +66,7 @@ $result = $con->query($sql);
             <main class="table-main">
                 <div class="table-container">
                     <div class="table-header">
-                        <button class="add-button" onclick="window.location.href='SIMS/PHP/createSubject.php';">
+                        <button class="add-button" onclick="window.location.href='../PHP/createSubject.php';">
                             <i class="fas fa-plus"></i> New Subject
                         </button>
                         <div class="search-container">
@@ -82,7 +84,6 @@ $result = $con->query($sql);
                                 <th>Code</th>
                                 <th>Unit</th>
                                 <th>Subject Name</th>
-                                <th>Total Sections</th>
                                 <th>Students Enrolled</th>
                                 <th>Time</th>
                                 <th>Actions</th>
@@ -96,12 +97,17 @@ $result = $con->query($sql);
                                 <td><?= ($row['SubjectCode']) ?></td>
                                 <td><?= ($row['Unit']) ?></td>
                                 <td><?= ($row['SubjectName']) ?></td>
-                                <td><?= ($row['TotalSections']) ?></td>
-                                <td><?= ($row['StudentsEnrolled']) ?></td>
+                                <td><?= ($row['StudentCount']) ?></td>
                                 <td><?= ($row['Time']) ?></td>
                                 <td class="actions-column">
-                                    <button class="edit-button"><i class="fas fa-edit"></i></button>
-                                    <button class="delete-button"><i class="fas fa-trash"></i></button>
+                                    <a href="../PHP/editsubject.php?id=<?= $row['SubjectId'] ?>" class="edit-button">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                    <a href="../PHP/deletesubject.php?id=<?= $row['SubjectId'] ?>" 
+                                        class="delete-button" 
+                                        onclick="return confirm('Are you sure you want to delete this subject?');">
+                                            <i class="fas fa-trash"></i>
+                                        </a>
                                 </td>
                             </tr>
                             <?php endwhile; ?>

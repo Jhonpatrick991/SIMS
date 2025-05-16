@@ -95,7 +95,7 @@ $result = $con->query($sql);
                                 <td><?= ($row['SectionName']) ?></td>
                                 <td><?= ($row['StudentsEnrolled']) ?></td>
                                 <td class="actions-column">
-                                    <a href="../PHP/editsection?id=<?= $row['SectionName'] ?>" class="edit-button">
+                                    <a href="../PHP/editsection.php?id=<?= $row['SectionName'] ?>" class="edit-button">
                                         <i class="fas fa-edit"></i>
                                     </a>
                                     <a href="../PHP/deletesection.php?id=<?= $row['SectionName'] ?>" class="delete-button"
