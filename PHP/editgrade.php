@@ -35,10 +35,10 @@ if (isset($_GET['id'])) {
         <input type="hidden" name="GradeID" value="<?= ($grade['StudentNumber']) ?>">
 
         <label>Student Number:</label>
-        <input type="text" name="StudentNumber" value="<?= ($grade['StudentNumber']) ?>" required>
+        <input type="text" name="StudentNumber" value="<?= ($grade['StudentNumber']) ?>" disabled>
 
         <label>Subject Code:</label>
-        <input type="text" name="SubjectCode" value="<?= ($grade['SubjectCode']) ?>" required>
+        <input type="text" name="SubjectCode" value="<?= ($grade['SubjectCode']) ?>" disabled>
 
         <label>Semester:</label>
         <input type="text" name="Semester" value="<?= ($grade['Semester']) ?>" required>

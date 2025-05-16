@@ -23,6 +23,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $stmt2->execute();
     $stmt2->close();
 
+    $sql1 = "UPDATE grades SET SubjectCode = ? WHERE SubjectCode = ?";
+    $stmt1 = $con->prepare($sql1);
+    $stmt1->bind_param("ss", $newSubjectCode, $oldSubjectCode);
+    $stmt1->execute();
+    $stmt1->close();
+
     header("Location: ../Menu/subjects.php?updated=1");
     exit;
 }

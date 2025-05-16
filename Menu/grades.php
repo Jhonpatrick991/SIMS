@@ -66,25 +66,10 @@ $result = $con->query($sql);
             <main class="table-main">
                 <div class="table-container">
                     <div class="filters">
-                        <div class="filter-group">
-                            <select class="filter-select">
-                                <option>Section</option>
-                            </select>
-                        </div>
-                        <div class="filter-group">
-                            <select class="filter-select">
-                                <option>Quarter - Semester</option>
-                            </select>
-                        </div>
                         <div class="search-container">
                             <label for="search">Search:</label>
                             <input type="text" id="search" class="search-input">
                         </div>
-                    </div>
-                    
-                    <div class="table-actions">
-                        <button class="action-button">New row</button>
-                        <button class="action-button">New column</button>
                     </div>
                     
                     <table class="data-table grades-table">

@@ -41,6 +41,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
           try {
                 $con = "INSERT INTO students (StudentNumber, StudentName, SectionName, Email, SubjectCode)
                     VALUES ('$StudentNumber', '$Name', '$SectionName', '$Email', '$SubjectCode')"; 
+                $con ="INSERT INTO grades (StudentNumber, SubjectCode)
+                    VALUES ('$StudentNumber', '$SubjectCode')";
                 $result = $conn->query($con);
             } catch (\Exception $e) {
                 $errorMessage = "Invalid Query: " . $conn->error;
