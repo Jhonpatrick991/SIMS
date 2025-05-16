@@ -1,7 +1,6 @@
 <?php
 include("../connect.php");
 $SectionName = "";
-$StudentsEnrolled = "";
 
 $conn = new mysqli("localhost", "sims", "sims", "sims");
 
@@ -10,16 +9,15 @@ $successMessage = "";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $SectionName = $_POST['SectionName'];
-    $StudentsEnrolled = $_POST['StudentsEnrolled'];
 
     do {
-        if (empty($SectionName) || empty($StudentsEnrolled)) {
+        if (empty($SectionName)) {
             $errorMessage = "All fields are required";
             break;
         }
         try {
-            $con = "INSERT INTO sections (SectionName, StudentsEnrolled)
-                VALUES ('$SectionName', '$StudentsEnrolled')";
+            $con = "INSERT INTO sections (SectionName)
+                VALUES ('$SectionName')";
             $result = $conn->query($con);
         } catch (\Exception $e) {
             $errorMessage = "Invalid Query: " . $conn->error;
@@ -63,13 +61,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <input type="text" class="form-control" name="SectionName" value="<?php echo $SectionName; ?>">
                     </div>
                 </div>
-                <div class="row mb-3">
-                    <label class="col-sm-3 col-form-label">Students Enrolled</label>
-                    <div class="col-sm-6">
-                        <input type="number" class="form-control" name="StudentsEnrolled" value="<?php echo $StudentsEnrolled; ?>">
-                    </div>
-                </div>
-
                 <?php
                 if (!empty($successMessage)) {
                     echo "

@@ -5,7 +5,10 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['username'] !== 'admin') {
     exit();
 }
 
-$sql = "SELECT * FROM sections";
+$sql = "SELECT s.SectionName, COUNT(st.StudentNumber) AS StudentsEnrolled
+        FROM sections s
+        LEFT JOIN students st ON s.SectionName = st.SectionName
+        GROUP BY s.SectionName";
 $result = $con->query($sql);
 
 ?>

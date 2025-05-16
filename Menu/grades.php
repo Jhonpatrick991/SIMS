@@ -5,9 +5,10 @@ if (!isset($_SESSION['loggedin']) || $_SESSION['username'] !== 'admin') {
     exit();
 }
 
-$sql = "SELECT * FROM grades";
+$sql = "SELECT *, 
+    ROUND((IFNULL(Prelim,0) + IFNULL(Midterm,0) + IFNULL(SemiFinal,0) + IFNULL(Final,0)) / 4, 2) AS AVG 
+    FROM grades";
 $result = $con->query($sql);
-
 ?>
 
 <!DOCTYPE html>
@@ -115,7 +116,7 @@ $result = $con->query($sql);
                                 <td><?= ($row['Midterm']) ?></td>
                                 <td><?= ($row['SemiFinal']) ?></td>
                                 <td><?= ($row['Final']) ?></td>
-                                <td><?= ($row['Total']) ?></td>
+                                <td><?= ($row['AVG']) ?></td>
                                 <td class="actions-column">
                                         <a href="../PHP/editgrade.php?id=<?= $row['StudentNumber'] ?>" class="edit-button">
                                             <i class="fas fa-edit"></i>

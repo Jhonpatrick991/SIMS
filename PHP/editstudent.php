@@ -34,8 +34,8 @@ if (isset($_GET['id'])) {
         <label>Name:</label>
         <input type="text" name="StudentName" value="<?= $student['StudentName'] ?>" required><br>
 
-        <label>Course:</label>
-        <input type="text" name="Course" value="<?= $student['Course'] ?>" required><br>
+        <label>SectionName:</label>
+        <input type="text" name="SectionName" value="<?= $student['SectionName'] ?>" required><br>
 
         <label>Email:</label>
         <input type="email" name="Email" value="<?= $student['Email'] ?>" required><br>

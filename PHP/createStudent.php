@@ -2,30 +2,45 @@
 include("../connect.php");
 $StudentNumber = "";
 $Name = "";
-$Course = "";       
-$SubjectEnrolled = "";
+$SectionName = "";       
 $Email = "";
+$SubjectCode = "";
 
 $conn = new mysqli("localhost", "sims", "sims", "sims");
 
 $errorMessage = "";
 $successMessage = "";
 
+$subjectCodes = [];
+$sectionNames = [];
+$sectionResult = $conn->query("SELECT SectionName FROM sections");
+if ($sectionResult && $sectionResult->num_rows > 0) {
+    while ($row = $sectionResult->fetch_assoc()) {
+        $sectionNames[] = $row['SectionName'];
+    }
+}
+$subjectResult = $conn->query("SELECT SubjectCode FROM subjects");
+if ($subjectResult && $subjectResult->num_rows > 0) {
+    while ($row = $subjectResult->fetch_assoc()) {
+        $subjectCodes[] = $row['SubjectCode'];
+    }
+}
+
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $StudentNumber = $_POST['StudentNumber'];
     $Name = $_POST['Name'];
-    $Course = $_POST['Course'];
-    $SubjectEnrolled = $_POST['SubjectEnrolled'];
+    $SectionName = $_POST['SectionName'];
     $Email = $_POST['Email'];
+    $SubjectCode = $_POST['SubjectCode'];
 
     do {
-        if (empty($StudentNumber) || empty($Name) || empty($Course) || empty($SubjectEnrolled) || empty($Email)) {
+        if (empty($StudentNumber) || empty($Name) || empty($SectionName) || empty($Email) || empty($SubjectCode)) {
             $errorMessage = "All fields are required";
             break;
         }
           try {
-                $con = "INSERT INTO students (StudentNumber, StudentName, Course, SubjectEnrolled, Email)
-                    VALUES ('$StudentNumber', '$Name', '$Course', '$SubjectEnrolled', '$Email')"; 
+                $con = "INSERT INTO students (StudentNumber, StudentName, SectionName, Email, SubjectCode)
+                    VALUES ('$StudentNumber', '$Name', '$SectionName', '$Email', '$SubjectCode')"; 
                 $result = $conn->query($con);
             } catch (\Exception $e) {
                 $errorMessage = "Invalid Query: " . $conn->error;
@@ -81,15 +96,29 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </div>
                 </div>
                 <div class="row mb-3">
-                    <label class="col-sm-3 col-form-label">Course</label>
+                    <label class="col-sm-3 col-form-label">Section Name</label>
                     <div class="col-sm-6">
-                        <input type="text" class="form-control" name="Course" value="<?php echo $Course; ?>">
+                        <select class="form-control" name="SectionName" required>
+                            <option value="">Select Section Name</option>
+                                <?php foreach ($sectionNames as $new): ?>
+                                <option value="<?= htmlspecialchars($new) ?>" <?= $SectionName == $new ? 'selected' : '' ?>>
+                                <?= htmlspecialchars($new) ?>
+                            </option>
+                                <?php endforeach; ?>
+                        </select>
                     </div>
                 </div>
                 <div class="row mb-3">
-                    <label class="col-sm-3 col-form-label">Subject Enrolled</label>
+                    <label class="col-sm-3 col-form-label">Subject Code</label>
                     <div class="col-sm-6">
-                        <input type="text" class="form-control" name="SubjectEnrolled" value="<?php echo $SubjectEnrolled; ?>">
+                        <select class="form-control" name="SubjectCode" required>
+                            <option value="">Select Subject Code</option>
+                                <?php foreach ($subjectCodes as $code): ?>
+                                <option value="<?= htmlspecialchars($code) ?>" <?= $SubjectCode == $code ? 'selected' : '' ?>>
+                                <?= htmlspecialchars($code) ?>
+                            </option>
+                                <?php endforeach; ?>
+                        </select>
                     </div>
                 </div>
                 <div class="row mb-3">

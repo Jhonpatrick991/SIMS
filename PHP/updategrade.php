@@ -15,8 +15,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['StudentNumber'])) {
     $stmt->bind_param("ssiiiis", $subjectCode, $semester, $prelim, $midterm, $semiFinal, $final, $studentNumber);
 
 
-    echo (($_POST));
-
     if ($stmt->execute()) {
         header("Location: ../Menu/grades.php?updated=1");
         exit;

@@ -86,8 +86,8 @@ $result = $con->query($sql);
                                 </th>
                                 <th>Student Number</th>
                                 <th>Name</th>
-                                <th>Course</th>
-                                <!-- <th>Subjects Enrolled</th> -->
+                                <th>Section</th>
+                                <th>Subject Code</th>
                                 <th>Email</th>
                                 <th>Actions</th>
                             </tr>
@@ -99,8 +99,8 @@ $result = $con->query($sql);
                                 <td><input type="checkbox"></td>
                                     <td><?= ($row['StudentNumber']) ?></td>
                                     <td><?= ($row['StudentName']) ?></td>
-                                    <td><?= ($row['Course']) ?></td>
-                                    <!-- <td><?= ($row['SubjectCode']) ?></td> -->
+                                    <td><?= ($row['SectionName']) ?></td>
+                                    <td><?= ($row['SubjectCode']) ?></td>
                                     <td><?= ($row['Email']) ?></td>
                                     <td class="actions-column">
                                         <a href="../PHP/editstudent.php?id=<?= $row['StudentNumber'] ?>" class="edit-button">
