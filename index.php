@@ -4,6 +4,10 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['username'] !== 'admin') {
     header("Location: login.php");
     exit();
 }
+
+$studentCount = $con->query("SELECT COUNT(*) FROM students")->fetch_row()[0];
+$sectionCount = $con->query("SELECT COUNT(*) FROM sections")->fetch_row()[0];
+$subjectCount = $con->query("SELECT COUNT(*) FROM subjects")->fetch_row()[0];
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -58,7 +62,7 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['username'] !== 'admin') {
             <main>
                 <div class="stats-row">
                     <div class="stat-card red">
-                        <div class="stat-value">84</div>
+                        <div class="stat-value"><?= $studentCount ?></div>
                         <div class="stat-title">Total Students</div>
                         <div class="more-info">
                             <span>More info</span>
@@ -67,7 +71,7 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['username'] !== 'admin') {
                     </div>
 
                     <div class="stat-card purple">
-                        <div class="stat-value">7</div>
+                        <div class="stat-value"><?= $sectionCount ?></div>
                         <div class="stat-title">Registered Sections</div>
                         <div class="more-info">
                             <span>More info</span>
@@ -76,7 +80,7 @@ if (!isset($_SESSION['loggedin']) && $_SESSION['username'] !== 'admin') {
                     </div>
 
                     <div class="stat-card gold">
-                        <div class="stat-value">6</div>
+                        <div class="stat-value"><?= $subjectCount ?></div>
                         <div class="stat-title">Ongoing Subjects</div>
                         <div class="more-info">
                             <span>More info</span>
