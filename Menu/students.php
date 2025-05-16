@@ -69,7 +69,7 @@ $result = $con->query($sql);
                     <?php endif; ?>
 
                     <div class="table-header">
-                        <button class="add-button" onclick="window.location.href='SIMS/PHP/createStudent.php';">
+                        <button class="add-button" onclick="window.location.href='../PHP/createStudent.php';">
                             <i class="fas fa-plus"></i> New Student
                         </button>
                         <div class="search-container">
@@ -128,3 +128,5 @@ $result = $con->query($sql);
     <script src="../JS/table.js"></script>
 </body>
 </html>
+
+

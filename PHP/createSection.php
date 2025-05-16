@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $successMessage = "Section created successfully";
 
-        header("Location: sections.php");
+        header("Location: ../Menu/sections.php");
         exit();
     } while (false);
 }
@@ -89,7 +89,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                         <button type="submit" class="btn btn-primary">Create</button>
                     </div>
                     <div class="col-sm-3 d-grid">
-                        <button type="button" class="btn btn-secondary" onclick="window.location.href='sections.php';">Cancel</button>
+                        <button type="button" class="btn btn-secondary" onclick="window.location.href='../Menu/sections.php';">Cancel</button>
                     </div>
                 </div>
             </form>

@@ -34,7 +34,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $successMessage = "Student created successfully";
         
-        header("Location: students.php");
+        header("Location: ../Menu/students.php");
         exit();
     } while (false);
 

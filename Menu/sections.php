@@ -64,7 +64,7 @@ $result = $con->query($sql);
             <main class="table-main">
                 <div class="table-container">
                     <div class="table-header">
-                        <button class="add-button" onclick="window.location.href='SIMS/PHP/createSection.php';">
+                        <button class="add-button" onclick="window.location.href='../PHP/createSection.php';">
                             <i class="fas fa-plus"></i> New Section
                         </button>
                         <div class="search-container">
@@ -92,22 +92,27 @@ $result = $con->query($sql);
                                 <td><?= ($row['SectionName']) ?></td>
                                 <td><?= ($row['StudentsEnrolled']) ?></td>
                                 <td class="actions-column">
-                                    <button class="edit-button"><i class="fas fa-edit"></i></button>
-                                    <button class="delete-button"><i class="fas fa-trash"></i></button>
+                                    <a href="../PHP/editsection?id=<?= $row['SectionName'] ?>" class="edit-button">
+                                        <i class="fas fa-edit"></i>
+                                    </a>
+                                    <a href="../PHP/deletesection.php?id=<?= $row['SectionName'] ?>" class="delete-button"
+                                    onclick="return confirm('Are you sure you want to delete this section?');">
+                                        <i class="fas fa-trash"></i>
+                                    </a>
                                 </td>
-                            </tr>
-                            <?php endwhile; ?>
-                            <?php else: ?>
-                                <tr><td colspan="7">No Grades were found.</td></tr>
-                            <?php endif; ?>
-                        </tbody>
-                    </table>
-                </div>
-            </main>
-        </div>
+                        </tr>
+                        <?php endwhile; ?>
+                        <?php else: ?>
+                            <tr><td colspan="7">No Grades were found.</td></tr>
+                        <?php endif; ?>
+                    </tbody>
+                </table>
+            </div>
+        </main>
     </div>
+</div>
 
-    <script src="../JS/script.js"></script>
-    <script src="../JS/table.js"></script>
+<script src="../JS/script.js"></script>
+<script src="../JS/table.js"></script>
 </body>
 </html>

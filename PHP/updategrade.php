@@ -10,16 +10,18 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['StudentNumber'])) {
     $semiFinal = $_POST['SemiFinal'];
     $final = $_POST['Final'];
 
-    // Optionally calculate GWA or Total here
+    // Update grade info (not StudentNumber)
+    $stmt = $con->prepare("UPDATE grades SET SubjectCode=?, Semester=?, Prelim=?, Midterm=?, SemiFinal=?, Final=? WHERE StudentNumber=?");
+    $stmt->bind_param("ssiiiis", $subjectCode, $semester, $prelim, $midterm, $semiFinal, $final, $studentNumber);
 
-    $stmt = $con->prepare("UPDATE grades SET StudentNumber=?, SubjectCode=?, Semester=?, Prelim=?, Midterm=?, SemiFinal=?, Final=? WHERE GradeID=?");
-    $stmt->bind_param("ssssiiii", $studentNumber, $subjectCode, $semester, $prelim, $midterm, $semiFinal, $final, $gradeID);
+
+    echo (($_POST));
 
     if ($stmt->execute()) {
         header("Location: ../Menu/grades.php?updated=1");
         exit;
     } else {
-        echo "Error updating grade.";
+        echo "Error updating grade: " . $stmt->error;
     }
 } else {
     echo "Invalid request.";

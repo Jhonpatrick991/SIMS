@@ -29,6 +29,7 @@ if (isset($_GET['id'])) {
     </style>
 </head>
 <body>
+    <!-- <h2> <?= ($_GET);?> </h2> -->
     <h2>Edit Grade</h2>
     <form action="updategrade.php" method="POST">
         <input type="hidden" name="GradeID" value="<?= ($grade['StudentNumber']) ?>">

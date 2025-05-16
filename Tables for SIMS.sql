@@ -7,6 +7,7 @@ CREATE TABLE IF NOT EXISTS Students (
 );
 
 CREATE TABLE IF NOT EXISTS Sections (
+    SectionId INT PRIMARY KEY AUTO_INCREMENT,
     SectionName VARCHAR(100) PRIMARY KEY,
     StudentsEnrolled INT NOT NULL
 );
